@@ -1,10 +1,6 @@
 pipeline {
          agent any
          stages {
-                 stage('Initialize'){
-                 def dockerHome = tool 'Docker1'
-                 env.PATH = "${dockerHome}/bin:${env.PATH}"
-                  }
                  stage('Stage One') {
                  steps {
                      echo 'Hi, welcome to SCM pipeline demo...'
@@ -12,9 +8,7 @@ pipeline {
                  }
                  stage('Stage Two') {
                  steps {
-                    //echo('Sample testing of Stage 2')
-                    echo('Creating docker image')
-                    sh ' docker build -t testapp:1.0 . '
+                    echo('Sample testing of Stage 2')
                  }
                  }
                  stage('Stage Three') {
