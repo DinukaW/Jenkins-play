@@ -1,6 +1,10 @@
 pipeline {
          agent any
          stages {
+                 stage('Initialize'){
+                 def dockerHome = tool 'Docker1'
+                 env.PATH = "${dockerHome}/bin:${env.PATH}"
+                  }
                  stage('Stage One') {
                  steps {
                      echo 'Hi, welcome to SCM pipeline demo...'
