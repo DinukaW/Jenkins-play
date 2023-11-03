@@ -10,7 +10,7 @@ pipeline {
                  steps {
                     //echo('Sample testing of Stage 2')
                     echo('Creating docker image')
-                    docker build -t testapp:1.0 .
+                    sh ' docker build -t testapp:1.0 . '
                  }
                  }
                  stage('Stage Three') {
